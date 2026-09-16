@@ -1,0 +1,378 @@
+<title>Pace Rail</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #eef0f3;
+    --surface: #ffffff;
+    --surface-2: #f6f7f9;
+    --ink: #1a1d23;
+    --muted: #5f6672;
+    --faint: #8d95a3;
+    --line: #d9dde4;
+    --line-strong: #b9c0cb;
+    --accent: #3341a8;
+    --good: #0f7a52;
+    --warn: #a86400;
+    --bad: #b3341f;
+    --good-soft: #e0f0e8;
+    --warn-soft: #f7ecd9;
+    --bad-soft: #f8e4df;
+    --accent-soft: #e4e7f6;
+    --shadow: 0 1px 2px rgba(26, 29, 35, .06), 0 8px 24px -12px rgba(26, 29, 35, .18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+    --bg: #0e1115;
+    --surface: #171b21;
+    --surface-2: #1d222a;
+    --ink: #e7eaef;
+    --muted: #9aa3b1;
+    --faint: #767f8d;
+    --line: #272d36;
+    --line-strong: #3a424e;
+    --accent: #8b98f0;
+    --good: #4cc18d;
+    --warn: #e0a54b;
+    --bad: #ee7a62;
+    --good-soft: #143024;
+    --warn-soft: #33270f;
+    --bad-soft: #35201b;
+    --accent-soft: #1e2440;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1115;
+    --surface: #171b21;
+    --surface-2: #1d222a;
+    --ink: #e7eaef;
+    --muted: #9aa3b1;
+    --faint: #767f8d;
+    --line: #272d36;
+    --line-strong: #3a424e;
+    --accent: #8b98f0;
+    --good: #4cc18d;
+    --warn: #e0a54b;
+    --bad: #ee7a62;
+    --good-soft: #143024;
+    --warn-soft: #33270f;
+    --bad-soft: #35201b;
+    --accent-soft: #1e2440;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .7);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 28px 56px;
+  }
+
+  h1, h2, h3 { font-family: Archivo, system-ui, sans-serif; text-wrap: balance; margin: 0; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  /* ---- masthead ---- */
+  .masthead {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    gap: 8px 16px; padding-bottom: 14px; margin-bottom: 24px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .masthead h1 { font-size: 26px; font-weight: 700; letter-spacing: -.015em; }
+  .masthead .today {
+    margin-left: auto; font-size: 12px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  /* ---- summary strip ---- */
+  .strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden; margin-bottom: 30px;
+  }
+  .stat { background: var(--surface); padding: 13px 15px; }
+  .stat dt {
+    font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--faint); margin-bottom: 3px;
+  }
+  .stat dd {
+    margin: 0; font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums;
+    font-size: 21px; font-weight: 500; letter-spacing: -.02em;
+  }
+  .stat dd small { font-size: 12px; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+
+  /* ---- goal rows ---- */
+  .goals { display: flex; flex-direction: column; gap: 14px; }
+  .goal {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 16px 18px 18px;
+    box-shadow: var(--shadow);
+  }
+  .goal.is-behind, .goal.is-overdue { border-left: 3px solid var(--bad); }
+  .goal.is-slipping { border-left: 3px solid var(--warn); }
+  .goal.is-on-track { border-left: 3px solid var(--good); }
+  .goal.is-done { border-left: 3px solid var(--accent); }
+
+  .goal-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  .goal-head h2 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+  .chip {
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px; font-weight: 600;
+    letter-spacing: .08em; padding: 3px 8px; border-radius: 4px;
+  }
+  .chip.is-on-track { background: var(--good-soft); color: var(--good); }
+  .chip.is-slipping { background: var(--warn-soft); color: var(--warn); }
+  .chip.is-behind, .chip.is-overdue { background: var(--bad-soft); color: var(--bad); }
+  .chip.is-done { background: var(--accent-soft); color: var(--accent); }
+  .countdown { margin-left: auto; font-size: 13px; color: var(--muted); }
+  .countdown b { color: var(--ink); font-weight: 600; }
+
+  /* the pace rail: fill = work done, marker = where the calendar says you should be */
+  .rail-block { margin-top: 15px; }
+  .rail-wrap { position: relative; padding-top: 7px; }
+  .rail {
+    position: relative; height: 26px; border-radius: 5px;
+    background: var(--surface-2); border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .rail-fill { position: absolute; inset: 0 auto 0 0; background: var(--accent); opacity: .85; }
+  .goal.is-behind .rail-fill, .goal.is-overdue .rail-fill { background: var(--bad); }
+  .goal.is-slipping .rail-fill { background: var(--warn); }
+  .goal.is-on-track .rail-fill { background: var(--good); }
+  .rail-marker {
+    position: absolute; top: 6px; bottom: 0; width: 2px;
+    background: var(--ink); transform: translateX(-1px);
+  }
+  .rail-marker::after {
+    content: ""; position: absolute; top: -6px; left: -3px;
+    border-left: 4px solid transparent; border-right: 4px solid transparent;
+    border-top: 6px solid var(--ink);
+  }
+  .rail-legend {
+    display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 7px;
+    font-size: 12px; color: var(--muted);
+  }
+  .rail-legend .num { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 500; }
+
+  .facts {
+    display: flex; flex-wrap: wrap; gap: 6px 22px;
+    margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--muted);
+  }
+  .facts span b { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 500; }
+  .verdict { margin-top: 12px; font-size: 13.5px; line-height: 1.45; }
+  .verdict.bad { color: var(--bad); }
+  .verdict.warn { color: var(--warn); }
+  .verdict.good { color: var(--good); }
+
+  .ms { margin-top: 14px; display: flex; flex-direction: column; gap: 0; }
+  .ms-row {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 6px 0; border-top: 1px dotted var(--line); font-size: 13.5px;
+  }
+  .ms-row:first-child { border-top: none; }
+  .ms-mark {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px; width: 14px;
+    flex: none; color: var(--faint);
+  }
+  .ms-row.done .ms-mark { color: var(--good); }
+  .ms-row.done .ms-title { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line-strong); }
+  .ms-row.late .ms-due { color: var(--bad); font-weight: 600; }
+  .ms-title { flex: 1 1 auto; min-width: 0; }
+  .ms-due {
+    font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums;
+    font-size: 12px; color: var(--muted); flex: none;
+  }
+
+  /* ---- log ---- */
+  .section-label {
+    font-family: Archivo, sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--faint);
+    margin: 34px 0 12px; padding-bottom: 7px; border-bottom: 1px solid var(--line);
+  }
+  .log { display: flex; flex-direction: column; }
+  .log-row {
+    display: flex; gap: 12px; align-items: baseline;
+    padding: 8px 2px; border-bottom: 1px solid var(--line); font-size: 13.5px;
+  }
+  .log-date {
+    font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums;
+    font-size: 12.5px; color: var(--muted); flex: none;
+  }
+  .log-hours {
+    font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums;
+    font-size: 12.5px; font-weight: 600; flex: none; min-width: 42px; text-align: right;
+  }
+  .log-note { flex: 1 1 auto; min-width: 0; color: var(--muted); }
+
+  .note-box {
+    background: var(--surface); border: 1px dashed var(--line-strong);
+    border-radius: 10px; padding: 18px 20px; margin-bottom: 26px;
+  }
+  .note-box h3 { font-size: 15px; margin-bottom: 6px; }
+  .note-box p { margin: 0; color: var(--muted); font-size: 13.5px; max-width: 62ch; }
+  .note-box code {
+    font-family: "IBM Plex Mono", monospace; font-size: 12.5px;
+    background: var(--surface-2); border: 1px solid var(--line);
+    padding: 1px 5px; border-radius: 3px; color: var(--ink);
+  }
+
+  footer {
+    margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--faint);
+  }
+
+  @media (max-width: 620px) {
+    .strip { grid-template-columns: repeat(2, 1fr); }
+    .countdown { margin-left: 0; width: 100%; }
+    .masthead .today { margin-left: 0; width: 100%; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <h1>Pace Rail</h1>
+    <div class="today mono" id="today">—</div>
+  </header>
+
+  <div id="setup" class="note-box" hidden>
+    <h3>Waiting on your real goals</h3>
+    <p>The goal below is a sample, kept so you can see the format. Tell Claude your goals,
+       deadlines and daily hours — or edit <code>goals.json</code> yourself — and this page
+       redraws from <code>python3 scripts/track.py --build</code>.</p>
+  </div>
+
+  <dl class="strip" id="strip"></dl>
+
+  <div class="goals" id="goals"></div>
+
+  <div class="section-label">Recent sessions</div>
+  <div class="log" id="log"></div>
+
+  <footer>
+    Source of truth is <span class="mono">goals.json</span> + <span class="mono">logs/log.md</span> in the
+    Productivity-for-me- repo. This page is a read-only view, rebuilt by
+    <span class="mono">scripts/track.py</span>.
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+  (function () {
+    var D = window.TRACKER_DATA || { generated: "—", goals: [], recent: [] };
+    var LABEL = {
+      "on-track": "ON TRACK", "slipping": "SLIPPING",
+      "behind": "BEHIND", "overdue": "OVERDUE", "done": "DONE"
+    };
+
+    function esc(s) {
+      return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function pct(f) { return Math.round(f * 1000) / 10; }
+    function clamp(f) { return Math.max(0, Math.min(1, f)); }
+
+    document.getElementById("today").textContent = "Rebuilt " + D.generated;
+
+    var goals = D.goals || [];
+    var sampleOnly = goals.length > 0 && goals.every(function (g) { return g.id === "sample"; });
+    if (sampleOnly || goals.length === 0) document.getElementById("setup").hidden = false;
+
+    // --- summary strip ---
+    var live = goals.filter(function (g) { return g.state !== "done"; });
+    var nearest = live.slice().sort(function (a, b) { return a.days_left - b.days_left; })[0];
+    var atRisk = goals.filter(function (g) {
+      return g.state === "behind" || g.state === "overdue" || g.state === "slipping";
+    }).length;
+    var bestStreak = goals.reduce(function (m, g) { return Math.max(m, g.streak); }, 0);
+    var debt = goals.reduce(function (s, g) { return s + (g.hours_debt > 0 ? g.hours_debt : 0); }, 0);
+
+    var stats = [
+      ["Next deadline", nearest ? nearest.days_left + " <small>days</small>" : "—"],
+      ["Active goals", live.length + " <small>of " + goals.length + "</small>"],
+      ["Needs attention", atRisk + " <small>goal" + (atRisk === 1 ? "" : "s") + "</small>"],
+      ["Streak", bestStreak + " <small>day" + (bestStreak === 1 ? "" : "s") + "</small>"]
+    ];
+    document.getElementById("strip").innerHTML = stats.map(function (s) {
+      return '<div class="stat"><dt>' + s[0] + "</dt><dd>" + s[1] + "</dd></div>";
+    }).join("");
+
+    // --- goal rows ---
+    document.getElementById("goals").innerHTML = goals.map(function (g) {
+      var work = clamp(g.work_frac), time = clamp(g.time_frac);
+      var gap = pct(time) - pct(work);
+
+      var verdict = "", vclass = "good";
+      if (g.state === "done") {
+        verdict = "Complete. All " + g.milestones_total + " milestones closed.";
+        vclass = "good";
+      } else if (g.state === "overdue") {
+        verdict = "Deadline passed with " + g.milestones_remaining + " milestone" +
+          (g.milestones_remaining === 1 ? "" : "s") + " open. Set a new date rather than pretending this one holds.";
+        vclass = "bad";
+      } else if (gap > 0) {
+        verdict = "Behind the calendar by " + gap.toFixed(1) + "%" +
+          (g.per_day_needed ? " — " + g.per_day_needed + "h/day for the remaining " + g.days_left + " days to close it." : ".");
+        vclass = g.state === "behind" ? "bad" : "warn";
+      } else {
+        verdict = "Ahead of the calendar by " + Math.abs(gap).toFixed(1) + "%. Hold this pace.";
+        vclass = "good";
+      }
+
+      var ms = (g.milestones || []).map(function (m) {
+        var late = !m.done && m.due < D.generated;
+        return '<div class="ms-row ' + (m.done ? "done" : "") + (late ? " late" : "") + '">' +
+          '<span class="ms-mark">' + (m.done ? "✓" : "○") + "</span>" +
+          '<span class="ms-title">' + esc(m.title) + "</span>" +
+          '<span class="ms-due">' + esc(m.done ? "done " + (m.done_on || "") : m.due) + "</span>" +
+          "</div>";
+      }).join("");
+
+      return '<article class="goal is-' + g.state + '">' +
+        '<div class="goal-head">' +
+          "<h2>" + esc(g.title) + "</h2>" +
+          '<span class="chip is-' + g.state + '">' + LABEL[g.state] + "</span>" +
+          '<span class="countdown"><b class="mono">' + g.days_left + "</b> days left · due <span class='mono'>" + esc(g.deadline) + "</span></span>" +
+        "</div>" +
+        '<div class="rail-block">' +
+          '<div class="rail-wrap">' +
+            '<div class="rail"><div class="rail-fill" style="width:' + pct(work) + '%"></div></div>' +
+            '<div class="rail-marker" style="left:' + pct(time) + '%" title="where the calendar says you should be"></div>' +
+          "</div>" +
+          '<div class="rail-legend">' +
+            '<span>work done <span class="num">' + pct(work) + "%</span> (" + g.milestones_done + "/" + g.milestones_total + ")</span>" +
+            '<span>▼ calendar <span class="num">' + pct(time) + "%</span> elapsed</span>" +
+          "</div>" +
+        "</div>" +
+        '<div class="verdict ' + vclass + '">' + esc(verdict) + "</div>" +
+        '<div class="facts">' +
+          "<span>hours <b>" + g.hours_logged + "</b> logged / <b>" + g.hours_expected + "</b> planned</span>" +
+          "<span>target <b>" + g.daily_hours_target + "h</b>/day</span>" +
+          "<span>worked <b>" + g.days_worked + "</b> of <b>" + g.days_elapsed + "</b> days</span>" +
+          "<span>streak <b>" + g.streak + "</b></span>" +
+        "</div>" +
+        (ms ? '<div class="ms">' + ms + "</div>" : "") +
+        "</article>";
+    }).join("") || '<div class="note-box"><h3>No goals yet</h3><p>Add them to <code>goals.json</code>.</p></div>';
+
+    // --- recent log ---
+    var recent = D.recent || [];
+    document.getElementById("log").innerHTML = recent.length
+      ? recent.map(function (e) {
+          return '<div class="log-row">' +
+            '<span class="log-date">' + esc(e.date) + "</span>" +
+            '<span class="log-hours">' + e.hours.toFixed(1) + "h</span>" +
+            '<span class="log-note">' + esc(e.goal) + (e.note ? " — " + esc(e.note) : "") + "</span>" +
+            "</div>";
+        }).join("")
+      : '<div class="log-row"><span class="log-note">Nothing logged yet.</span></div>';
+  })();
+</script>

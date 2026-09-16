@@ -1,0 +1,41 @@
+{
+  "owner": "Prabhat",
+  "timezone": "Asia/Kolkata",
+  "goals": [
+    {
+      "id": "sample",
+      "title": "SAMPLE GOAL \u2014 replace me",
+      "category": "example",
+      "start": "2026-08-01",
+      "deadline": "2026-12-15",
+      "daily_hours": 2.0,
+      "why": "This row exists to show the format. Delete it once your real goals are in.",
+      "milestones": [
+        {
+          "title": "First milestone",
+          "due": "2026-08-25",
+          "done": true,
+          "done_on": "2026-08-23"
+        },
+        {
+          "title": "Second milestone",
+          "due": "2026-09-20",
+          "done": false,
+          "done_on": null
+        },
+        {
+          "title": "Third milestone",
+          "due": "2026-11-01",
+          "done": false,
+          "done_on": null
+        },
+        {
+          "title": "Final push",
+          "due": "2026-12-15",
+          "done": false,
+          "done_on": null
+        }
+      ]
+    }
+  ]
+}
