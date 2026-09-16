@@ -107,3 +107,37 @@ the brief can only say "put in 4 hours". With them it says exactly what to open:
   ]
 }
 ```
+
+## Real plan (as of Sep 2026)
+
+Seven goals, replacing the sample:
+
+| Goal | Window | Days | Hours/day |
+|---|---|---|---|
+| `gs-completion` | now → 20 Jan 2027 | Mon–Sat | 5.0 |
+| `psir-foundation` | now → 20 Jan 2027 | Mon–Sat | 4.0 |
+| `yt-foundation` | now → 20 Jan 2027 | Mon–Sat | 6.0 |
+| `gs-revision` | 20 Jan → 16 May 2027 | Mon–Sat | 5.0 |
+| `psir-revision` | 20 Jan → 16 May 2027 | Mon–Sat | 4.0 |
+| `yt-growth` | 20 Jan → 16 May 2027 | Mon–Sat | 6.0 |
+| `current-affairs` | now → 16 May 2027 | **Sunday only** | 6.0 |
+
+Prelims target: 16 May 2027 (a Sunday, matching UPSC's usual pattern).
+Already covered before this plan started: Geography, Environment (basic),
+Ancient & Medieval History, Polity — not re-taught, but folded into the
+revision-phase milestones so they get a recall pass too. PSIR is being built
+from zero.
+
+### Why a goal has an `active_days` field
+
+Sunday is current-affairs + personal time, not a rest day from the tracker's
+point of view — but it's also not a work day for the six-day-week goals. Each
+goal in `goals.json` can carry `"active_days": ["mon", ..., "sat"]`; the pace
+math (`time_frac`, `hours_expected`, `per_day_needed`, streaks) only counts a
+goal's own active days, so Sunday never shows up as a missed day for
+`gs-completion` and Mon–Sat never counts against `current-affairs`. A goal
+with no `active_days` runs every day, unchanged from before.
+
+`scripts/today.py` uses the same field to decide what's even on the table
+today — on a Sunday it shows only `current-affairs`; the rest say so under
+"Off today (not scheduled)" instead of asking for hours they were never due.

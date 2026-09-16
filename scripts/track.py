@@ -22,6 +22,30 @@ DATA = ROOT / "dashboard" / "data.js"
 # straight-line pace without it counting as slipping.
 SLIP_TOLERANCE = 0.05
 
+# Mon=0 .. Sun=6, matching date.weekday(). A goal with no "active_days" set
+# is assumed to run every day of the week (old behaviour, unchanged).
+WEEKDAY_CODES = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+ALL_DAYS = set(WEEKDAY_CODES)
+
+
+def active_set(goal):
+    days = goal.get("active_days")
+    return set(days) if days else set(ALL_DAYS)
+
+
+def is_active(d, days_set):
+    return WEEKDAY_CODES[d.weekday()] in days_set
+
+
+def count_active_days(d0, d1, days_set):
+    """Active days in the half-open range [d0, d1). Days before d0 count 0."""
+    n = (d1 - d0).days
+    if n <= 0:
+        return 0
+    if days_set == ALL_DAYS:
+        return n
+    return sum(1 for i in range(n) if is_active(d0 + timedelta(days=i), days_set))
+
 ENTRY = re.compile(
     r"^(\d{4}-\d{2}-\d{2})\s*\|\s*([^|]+?)\s*\|\s*([0-9.]+)\s*h?\s*(?:\|\s*(.*))?$"
 )
@@ -61,31 +85,51 @@ def load_entries():
     return entries, bad
 
 
-def streak(dates, today):
-    """Consecutive days with a non-zero entry, ending today or yesterday."""
-    days = set(dates)
-    if today in days:
-        cursor = today
-    elif (today - timedelta(days=1)) in days:
-        cursor = today - timedelta(days=1)
-    else:
-        return 0
-    n = 0
-    while cursor in days:
-        n += 1
+def streak(dates, today, days_set=None):
+    """Consecutive worked active-days, ending today or yesterday.
+
+    A rest day (Sunday on a 6-day-week goal) is skipped, not a break — the
+    streak shouldn't reset just because Sunday isn't a work day for this goal.
+    """
+    days_set = days_set or ALL_DAYS
+    worked = set(dates)
+
+    cursor = today
+    if is_active(cursor, days_set) and cursor not in worked:
+        # Grace for today: it may simply not be logged yet.
         cursor -= timedelta(days=1)
+
+    n = 0
+    limit = 3660  # ~10 years back, just a sane backstop against a bad config
+    for _ in range(limit):
+        if not is_active(cursor, days_set):
+            cursor -= timedelta(days=1)
+            continue
+        if cursor in worked:
+            n += 1
+            cursor -= timedelta(days=1)
+        else:
+            break
     return n
 
 
 def assess(goal, entries, today):
     start = parse_date(goal["start"])
     deadline = parse_date(goal["deadline"])
+    days_set = active_set(goal)
+
     span = max((deadline - start).days, 1)
     elapsed = (today - start).days
-    days_left = (deadline - today).days
+    days_left = (deadline - today).days  # calendar days, for the countdown display
 
-    # Fraction of the calendar that has burned, clamped to [0, 1].
-    time_frac = min(max(elapsed / span, 0.0), 1.0)
+    # Work-day equivalents of the same three spans, so a goal with Sundays off
+    # isn't judged "behind" for skipping a day it was never meant to work.
+    active_span = count_active_days(start, deadline, days_set) or span
+    active_elapsed = count_active_days(start, today, days_set)
+    active_days_left = count_active_days(today, deadline, days_set)
+
+    # Fraction of the *working* calendar that has burned, clamped to [0, 1].
+    time_frac = min(max(active_elapsed / active_span, 0.0), 1.0)
 
     ms = goal.get("milestones", [])
     done = [m for m in ms if m.get("done")]
@@ -94,8 +138,8 @@ def assess(goal, entries, today):
     mine = [e for e in entries if e["goal"] == goal["id"]]
     logged = sum(e["hours"] for e in mine)
     target_daily = float(goal.get("daily_hours") or 0)
-    # Hours you should have banked by now, if you'd hit target every day so far.
-    expected_hours = target_daily * max(elapsed, 0)
+    # Hours you should have banked by now, at target on every active day so far.
+    expected_hours = target_daily * max(active_elapsed, 0)
     worked_days = sorted({e["date"] for e in mine if e["hours"] > 0})
 
     if days_left < 0:
@@ -109,12 +153,12 @@ def assess(goal, entries, today):
     else:
         state = "behind"
 
-    # What the remaining work costs per day from here on.
+    # What the remaining work costs per *active* day from here on.
     remaining_ms = len(ms) - len(done)
     per_day_needed = None
-    if days_left > 0 and expected_hours > 0:
-        total_planned = target_daily * span
-        per_day_needed = round(max(total_planned - logged, 0) / days_left, 2)
+    if active_days_left > 0 and expected_hours > 0:
+        total_planned = target_daily * active_span
+        per_day_needed = round(max(total_planned - logged, 0) / active_days_left, 2)
 
     overdue_ms = [
         m for m in ms if not m.get("done") and parse_date(m["due"]) < today
@@ -130,9 +174,11 @@ def assess(goal, entries, today):
         "why": goal.get("why", ""),
         "start": goal["start"],
         "deadline": goal["deadline"],
+        "active_days": sorted(days_set, key=WEEKDAY_CODES.index),
         "days_total": span,
         "days_elapsed": max(elapsed, 0),
         "days_left": days_left,
+        "active_days_left": active_days_left,
         "time_frac": round(time_frac, 4),
         "work_frac": round(work_frac, 4),
         "state": state,
@@ -148,7 +194,7 @@ def assess(goal, entries, today):
         "hours_debt": round(expected_hours - logged, 2),
         "per_day_needed": per_day_needed,
         "days_worked": len(worked_days),
-        "streak": streak(worked_days, today),
+        "streak": streak(worked_days, today, days_set),
         "last_worked": worked_days[-1].isoformat() if worked_days else None,
     }
 

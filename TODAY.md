@@ -1,18 +1,33 @@
 # Today — Wednesday, 2026-09-16
 
-**90 days** to your nearest deadline. Streak: **4**.
+**126 days** to your nearest deadline. Streak: **0**.
 
-## The ask: 2.25h total
+## The ask: 15.0h total
 
-### SAMPLE GOAL — replace me — 2.25h
-Aiming at: **Second milestone** (4 days left, 4 pieces to go)
+### UPSC GS — Complete Remaining Subjects — 5.0h
+Aiming at: **Modern History** (12 days left, 6 pieces to go)
 
-- [ ] Sample chunk C
+- [ ] 1857 Revolt & causes
 
-> Carrying 19.4h of debt — today's target is raised to absorb it.
+### PSIR Optional — Papers I & II from Scratch — 4.0h
+Aiming at: **Political Theory — Core Concepts** (9 days left, 5 pieces to go)
+
+- [ ] Meaning, approaches, and relevance of PT
+
+### YouTube Channel — Launch & First Videos — 6.0h
+Aiming at: **Channel branding & setup** (16 days left, 3 pieces to go)
+
+- [ ] Pick channel name, handle, logo
 
 ## Log it when you're done
 
 ```
-2026-09-16 | sample | <hours> | <what you did>
+2026-09-16 | gs-completion | <hours> | <what you did>
+2026-09-16 | psir-foundation | <hours> | <what you did>
+2026-09-16 | yt-foundation | <hours> | <what you did>
 ```
+
+> Yesterday has no entry. Log a zero with the reason if it was a rest day —
+> a blank day makes the pace maths lie.
+
+Off today (not scheduled): Current Affairs — Weekly Consolidation.

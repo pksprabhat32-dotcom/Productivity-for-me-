@@ -14,7 +14,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from track import GOALS, LOG, ROOT, assess, load_entries, parse_date  # noqa: E402
+from track import GOALS, LOG, ROOT, WEEKDAY_CODES, assess, load_entries, parse_date  # noqa: E402
 
 TODAY_MD = ROOT / "TODAY.md"
 
@@ -98,8 +98,20 @@ def build(today):
     order = {"overdue": 0, "behind": 1, "slipping": 2, "on-track": 3, "done": 4}
     results.sort(key=lambda r: (order[r["state"]], r["days_left"]))
 
-    live = [r for r in results if r["state"] != "done"]
-    tasks = [assignment(r, today) for r in live]
+    todays_code = WEEKDAY_CODES[today.weekday()]
+    # "Live" means started and not finished — a Jan-2027 revision goal isn't
+    # due today just because today is one of its weekdays.
+    live = [
+        r for r in results
+        if r["state"] != "done" and parse_date(r["start"]) <= today
+    ]
+    # A goal simply isn't on the schedule today if today isn't one of its
+    # active days — e.g. GS/PSIR/YouTube are Mon-Sat, current affairs is
+    # Sunday-only. Don't show a 0h row for a goal that was never due today.
+    on_today = [r for r in live if todays_code in r.get("active_days", WEEKDAY_CODES)]
+    on_today_ids = {r["id"] for r in on_today}
+    rest_today = [r for r in live if r["id"] not in on_today_ids]
+    tasks = [assignment(r, today) for r in on_today]
 
     yesterday = today - timedelta(days=1)
     logged_yday = any(e["date"] == yesterday for e in entries)
@@ -111,6 +123,7 @@ def build(today):
         "weekday": today.strftime("%A"),
         "total_hours": round_quarter(sum(t["hours"] for t in tasks)),
         "tasks": tasks,
+        "resting": [r["title"] for r in rest_today],
         "logged_yesterday": logged_yday,
         "logged_today": logged_today,
         "nearest_deadline": nearest,
@@ -125,7 +138,10 @@ def render(b):
         L.append("")
 
     if not b["tasks"]:
-        L.append("No active goals. Add them to `goals.json`.")
+        if b["resting"]:
+            L.append("Nothing due today from: " + ", ".join(b["resting"]) + ".")
+        else:
+            L.append("No active goals. Add them to `goals.json`.")
         return "\n".join(L)
 
     L.append(f"## The ask: {b['total_hours']}h total")
@@ -158,6 +174,9 @@ def render(b):
         L.append("")
         L.append("> Yesterday has no entry. Log a zero with the reason if it was a rest day —")
         L.append("> a blank day makes the pace maths lie.")
+    if b["resting"]:
+        L.append("")
+        L.append("Off today (not scheduled): " + ", ".join(b["resting"]) + ".")
     return "\n".join(L)
 
 
