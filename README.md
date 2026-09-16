@@ -141,3 +141,18 @@ with no `active_days` runs every day, unchanged from before.
 `scripts/today.py` uses the same field to decide what's even on the table
 today — on a Sunday it shows only `current-affairs`; the rest say so under
 "Off today (not scheduled)" instead of asking for hours they were never due.
+
+### Daily recall for subjects finished months ago
+
+Geography, Medieval History, Environment and Constitution were done well
+before this tracker existed — decaying quietly while attention moves to new
+subjects. `recall-maintenance` runs daily (Mon–Sat) alongside everything
+else, through 20 Jan 2027:
+
+- **19 weekly milestones**, each covering all 5 older subjects (Ancient
+  History's completion month wasn't given — assumed alongside Medieval
+  History; correct it in `goals.json` if that's wrong) plus a mixed
+  recall/PYQ day.
+- **2h/day**, funded by trimming 1h off `gs-completion`/`psir-foundation`
+  combined (9h → 8h, split 4.5/3.5) and adding 1h on top, per your call —
+  total daily load is now **16h** (10h study + 6h YouTube), Mon–Sat.

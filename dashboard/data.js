@@ -3,13 +3,13 @@ window.TRACKER_DATA = {
   "brief": {
     "date": "2026-09-16",
     "weekday": "Wednesday",
-    "total_hours": 15.0,
+    "total_hours": 16.0,
     "tasks": [
       {
         "id": "gs-completion",
         "title": "UPSC GS \u2014 Complete Remaining Subjects",
         "state": "on-track",
-        "hours": 5.0,
+        "hours": 4.5,
         "impossible": false,
         "milestone": "Modern History",
         "due_in": 12,
@@ -23,7 +23,7 @@ window.TRACKER_DATA = {
         "id": "psir-foundation",
         "title": "PSIR Optional \u2014 Papers I & II from Scratch",
         "state": "on-track",
-        "hours": 4.0,
+        "hours": 3.5,
         "impossible": false,
         "milestone": "Political Theory \u2014 Core Concepts",
         "due_in": 9,
@@ -45,6 +45,21 @@ window.TRACKER_DATA = {
           "Pick channel name, handle, logo"
         ],
         "chunks_left": 3,
+        "note": ""
+      },
+      {
+        "id": "recall-maintenance",
+        "title": "Daily Recall \u2014 Geography, History, Environment, Polity",
+        "state": "on-track",
+        "hours": 2.0,
+        "impossible": false,
+        "milestone": "Recall Week 1",
+        "due_in": 3,
+        "chunks": [
+          "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+          "Medieval History (completed Apr 2026)"
+        ],
+        "chunks_left": 6,
         "note": ""
       }
     ],
@@ -410,7 +425,7 @@ window.TRACKER_DATA = {
           }
         ]
       },
-      "daily_hours_target": 5.0,
+      "daily_hours_target": 4.5,
       "hours_logged": 0,
       "hours_expected": 0.0,
       "hours_debt": 0.0,
@@ -807,7 +822,7 @@ window.TRACKER_DATA = {
           }
         ]
       },
-      "daily_hours_target": 4.0,
+      "daily_hours_target": 3.5,
       "hours_logged": 0,
       "hours_expected": 0.0,
       "hours_debt": 0.0,
@@ -1041,6 +1056,683 @@ window.TRACKER_DATA = {
         ]
       },
       "daily_hours_target": 6.0,
+      "hours_logged": 0,
+      "hours_expected": 0.0,
+      "hours_debt": 0.0,
+      "per_day_needed": null,
+      "days_worked": 0,
+      "streak": 0,
+      "last_worked": null
+    },
+    {
+      "id": "recall-maintenance",
+      "title": "Daily Recall \u2014 Geography, History, Environment, Polity",
+      "category": "exam",
+      "why": "These were finished months ago (Geography Mar, Medieval History Apr, Environment May, Constitution Jul \u2014 Ancient History's month wasn't given, assumed alongside Medieval History; correct this if wrong). Without active recall they decay while attention is on new subjects and PSIR. Runs daily through 20 Jan, then folds into the formal GS/PSIR revision-phase goals.",
+      "start": "2026-09-16",
+      "deadline": "2027-01-20",
+      "active_days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ],
+      "days_total": 126,
+      "days_elapsed": 0,
+      "days_left": 126,
+      "active_days_left": 108,
+      "time_frac": 0.0,
+      "work_frac": 0.0,
+      "state": "on-track",
+      "milestones": [
+        {
+          "title": "Recall Week 1",
+          "due": "2026-09-19",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 2",
+          "due": "2026-09-26",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 3",
+          "due": "2026-10-03",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 4",
+          "due": "2026-10-10",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 5",
+          "due": "2026-10-17",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 6",
+          "due": "2026-10-24",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 7",
+          "due": "2026-10-31",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 8",
+          "due": "2026-11-07",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 9",
+          "due": "2026-11-14",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 10",
+          "due": "2026-11-21",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 11",
+          "due": "2026-11-28",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 12",
+          "due": "2026-12-05",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 13",
+          "due": "2026-12-12",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 14",
+          "due": "2026-12-19",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 15",
+          "due": "2026-12-26",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 16",
+          "due": "2027-01-02",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 17",
+          "due": "2027-01-09",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 18",
+          "due": "2027-01-16",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "Recall Week 19",
+          "due": "2027-01-20",
+          "done": false,
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+              "done": false
+            },
+            {
+              "t": "Medieval History (completed Apr 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+              "done": false
+            },
+            {
+              "t": "Environment (completed May 2026)",
+              "done": false
+            },
+            {
+              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "done": false
+            },
+            {
+              "t": "Mixed recall + PYQs across all five",
+              "done": false
+            }
+          ]
+        }
+      ],
+      "milestones_done": 0,
+      "milestones_total": 19,
+      "milestones_remaining": 19,
+      "overdue_milestones": [],
+      "next_milestone": {
+        "title": "Recall Week 1",
+        "due": "2026-09-19",
+        "done": false,
+        "done_on": null,
+        "chunks": [
+          {
+            "t": "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
+            "done": false
+          },
+          {
+            "t": "Medieval History (completed Apr 2026)",
+            "done": false
+          },
+          {
+            "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
+            "done": false
+          },
+          {
+            "t": "Environment (completed May 2026)",
+            "done": false
+          },
+          {
+            "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+            "done": false
+          },
+          {
+            "t": "Mixed recall + PYQs across all five",
+            "done": false
+          }
+        ]
+      },
+      "daily_hours_target": 2.0,
       "hours_logged": 0,
       "hours_expected": 0.0,
       "hours_debt": 0.0,
