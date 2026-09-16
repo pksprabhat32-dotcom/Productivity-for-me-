@@ -91,6 +91,56 @@
     text-transform: uppercase; color: var(--muted);
   }
 
+
+  /* ---- today's brief: the one part of the page you act on ---- */
+  .brief {
+    background: var(--ink); color: var(--bg);
+    border-radius: 12px; padding: 20px 22px 22px; margin-bottom: 26px;
+  }
+  .brief-top {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+    padding-bottom: 12px; margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  :root[data-theme="dark"] .brief-top, .brief-dark .brief-top { border-bottom-color: rgba(0,0,0,.2); }
+  .brief-top h2 { font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+  .brief-ask {
+    margin-left: auto; font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums; font-size: 15px; font-weight: 600;
+  }
+  .brief-ask small { font-weight: 400; opacity: .7; }
+  .brief-task { padding: 11px 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .brief-task:first-of-type { border-top: none; padding-top: 0; }
+  .brief-task h3 {
+    font-size: 14.5px; font-weight: 600; display: flex;
+    flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
+  }
+  .brief-hours {
+    font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums;
+    margin-left: auto; opacity: .85;
+  }
+  .brief-aim { font-size: 12.5px; opacity: .7; margin-top: 2px; }
+  .brief-chunks { list-style: none; margin: 9px 0 0; padding: 0; }
+  .brief-chunks li {
+    font-size: 13.5px; padding: 3px 0 3px 22px; position: relative;
+  }
+  .brief-chunks li::before {
+    content: ""; position: absolute; left: 0; top: 7px;
+    width: 12px; height: 12px; border-radius: 3px;
+    border: 1.5px solid rgba(255,255,255,.45);
+  }
+  :root[data-theme="dark"] .brief-chunks li::before { border-color: rgba(0,0,0,.35); }
+  .brief-note {
+    font-size: 12.5px; margin-top: 9px; padding: 7px 10px;
+    border-radius: 5px; background: rgba(255,255,255,.1);
+  }
+  :root[data-theme="dark"] .brief-note { background: rgba(0,0,0,.18); }
+  .brief-foot {
+    margin-top: 14px; padding-top: 12px; font-size: 12.5px; opacity: .75;
+    border-top: 1px solid rgba(255,255,255,.14);
+  }
+  :root[data-theme="dark"] .brief-foot { border-top-color: rgba(0,0,0,.2); }
+
   /* ---- summary strip ---- */
   .strip {
     display: grid; grid-template-columns: repeat(4, 1fr);
@@ -249,6 +299,8 @@
        redraws from <code>python3 scripts/track.py --build</code>.</p>
   </div>
 
+  <section class="brief" id="brief" hidden></section>
+
   <dl class="strip" id="strip"></dl>
 
   <div class="goals" id="goals"></div>
@@ -285,6 +337,36 @@
     var goals = D.goals || [];
     var sampleOnly = goals.length > 0 && goals.every(function (g) { return g.id === "sample"; });
     if (sampleOnly || goals.length === 0) document.getElementById("setup").hidden = false;
+
+
+    // --- today's brief ---
+    var B = D.brief;
+    if (B && B.tasks && B.tasks.length) {
+      var el = document.getElementById("brief");
+      el.hidden = false;
+      var head = '<div class="brief-top"><h2>Today — ' + esc(B.weekday) + ", " + esc(B.date) + "</h2>" +
+        '<span class="brief-ask">' + B.total_hours + "h <small>asked</small></span></div>";
+      var body = B.tasks.map(function (t) {
+        var when = t.due_in === null ? "" :
+          t.due_in < 0 ? "overdue by " + Math.abs(t.due_in) + "d" :
+          t.due_in === 0 ? "due today" : t.due_in + " days left";
+        return '<div class="brief-task">' +
+          "<h3>" + esc(t.title) + '<span class="brief-hours">' + t.hours + "h</span></h3>" +
+          (t.milestone ? '<div class="brief-aim">' + esc(t.milestone) + " · " + when +
+            " · " + t.chunks_left + " pieces to go</div>" : "") +
+          (t.chunks.length ? '<ul class="brief-chunks">' + t.chunks.map(function (c) {
+            return "<li>" + esc(c) + "</li>";
+          }).join("") + "</ul>" : "") +
+          (t.note ? '<div class="brief-note">' + esc(t.note) + "</div>" : "") +
+          "</div>";
+      }).join("");
+      var foot = B.logged_today
+        ? '<div class="brief-foot">Today is logged. </div>'
+        : B.logged_yesterday
+          ? '<div class="brief-foot">Nothing logged today yet.</div>'
+          : '<div class="brief-foot">Yesterday has no entry either — log a zero with the reason if it was a rest day.</div>';
+      el.innerHTML = head + body + foot;
+    }
 
     // --- summary strip ---
     var live = goals.filter(function (g) { return g.state !== "done"; });

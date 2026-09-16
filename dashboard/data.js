@@ -1,5 +1,30 @@
 window.TRACKER_DATA = {
   "generated": "2026-09-16",
+  "brief": {
+    "date": "2026-09-16",
+    "weekday": "Wednesday",
+    "total_hours": 2.25,
+    "tasks": [
+      {
+        "id": "sample",
+        "title": "SAMPLE GOAL \u2014 replace me",
+        "state": "slipping",
+        "hours": 2.25,
+        "impossible": false,
+        "milestone": "Second milestone",
+        "due_in": 4,
+        "chunks": [
+          "Sample chunk C"
+        ],
+        "chunks_left": 4,
+        "note": "Carrying 19.4h of debt \u2014 today's target is raised to absorb it."
+      }
+    ],
+    "logged_yesterday": true,
+    "logged_today": true,
+    "nearest_deadline": 90,
+    "streak": 4
+  },
   "owner": "Prabhat",
   "goals": [
     {
@@ -26,7 +51,33 @@ window.TRACKER_DATA = {
           "title": "Second milestone",
           "due": "2026-09-20",
           "done": false,
-          "done_on": null
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Sample chunk A",
+              "done": true
+            },
+            {
+              "t": "Sample chunk B",
+              "done": true
+            },
+            {
+              "t": "Sample chunk C",
+              "done": false
+            },
+            {
+              "t": "Sample chunk D",
+              "done": false
+            },
+            {
+              "t": "Sample chunk E",
+              "done": false
+            },
+            {
+              "t": "Sample chunk F",
+              "done": false
+            }
+          ]
         },
         {
           "title": "Third milestone",
@@ -49,7 +100,33 @@ window.TRACKER_DATA = {
         "title": "Second milestone",
         "due": "2026-09-20",
         "done": false,
-        "done_on": null
+        "done_on": null,
+        "chunks": [
+          {
+            "t": "Sample chunk A",
+            "done": true
+          },
+          {
+            "t": "Sample chunk B",
+            "done": true
+          },
+          {
+            "t": "Sample chunk C",
+            "done": false
+          },
+          {
+            "t": "Sample chunk D",
+            "done": false
+          },
+          {
+            "t": "Sample chunk E",
+            "done": false
+          },
+          {
+            "t": "Sample chunk F",
+            "done": false
+          }
+        ]
       },
       "daily_hours_target": 2.0,
       "hours_logged": 72.6,

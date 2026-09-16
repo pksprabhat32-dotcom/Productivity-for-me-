@@ -75,3 +75,35 @@ progress moves in useless jumps, more and logging becomes a chore.
     python3 scripts/track.py --date 2026-11-20
 
 Useful for asking "if I keep this pace, what does November look like?"
+
+## Getting today's goal
+
+    python3 scripts/today.py --write
+
+Turns the plan into one concrete assignment: hours to put in, which milestone
+you're aiming at, and which specific pieces to do today. It writes `TODAY.md`
+and appears at the top of the dashboard.
+
+How the assignment is derived:
+
+- **Hours** = your `daily_hours`, raised to the catch-up rate if you're carrying
+  debt, capped at 14h. Above that cap it stops raising the number and tells you
+  the plan is broken instead — effort can't fix a deadline that's already gone.
+- **Pieces** = remaining `chunks` of the next milestone, divided by days left
+  until it's due, rounded up.
+
+Chunks are optional but they're what makes a daily goal specific. Without them
+the brief can only say "put in 4 hours". With them it says exactly what to open:
+
+```json
+{
+  "title": "Finish Polity",
+  "due": "2026-11-30",
+  "done": false,
+  "done_on": null,
+  "chunks": [
+    { "t": "Laxmikanth ch.1-5", "done": true },
+    { "t": "Laxmikanth ch.6-10", "done": false }
+  ]
+}
+```

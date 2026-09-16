@@ -219,8 +219,15 @@ def main():
 
     if "--build" in args:
         recent = sorted(entries, key=lambda e: e["date"], reverse=True)[:14]
+        try:
+            import today as today_mod  # noqa: WPS433 - optional companion module
+            brief = today_mod.build(today)
+        except Exception:
+            brief = None
+
         payload = {
             "generated": today.isoformat(),
+            "brief": brief,
             "owner": cfg.get("owner", ""),
             "goals": results,
             "recent": [

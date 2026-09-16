@@ -21,7 +21,33 @@
           "title": "Second milestone",
           "due": "2026-09-20",
           "done": false,
-          "done_on": null
+          "done_on": null,
+          "chunks": [
+            {
+              "t": "Sample chunk A",
+              "done": true
+            },
+            {
+              "t": "Sample chunk B",
+              "done": true
+            },
+            {
+              "t": "Sample chunk C",
+              "done": false
+            },
+            {
+              "t": "Sample chunk D",
+              "done": false
+            },
+            {
+              "t": "Sample chunk E",
+              "done": false
+            },
+            {
+              "t": "Sample chunk F",
+              "done": false
+            }
+          ]
         },
         {
           "title": "Third milestone",
