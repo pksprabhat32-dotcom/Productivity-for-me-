@@ -1068,7 +1068,7 @@ window.TRACKER_DATA = {
       "id": "recall-maintenance",
       "title": "Daily Recall \u2014 Geography, History, Environment, Polity",
       "category": "exam",
-      "why": "These were finished months ago (Geography Mar, Medieval History Apr, Environment May, Constitution Jul \u2014 Ancient History's month wasn't given, assumed alongside Medieval History; correct this if wrong). Without active recall they decay while attention is on new subjects and PSIR. Runs daily through 20 Jan, then folds into the formal GS/PSIR revision-phase goals.",
+      "why": "These were finished months ago (Geography Mar, Medieval History Apr, Environment May, Constitution Jul, Ancient History Aug) while attention moves to new subjects and PSIR. Runs daily through 20 Jan, then folds into the formal GS/PSIR revision-phase goals.",
       "start": "2026-09-16",
       "deadline": "2027-01-20",
       "active_days": [
@@ -1102,15 +1102,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1134,15 +1134,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1166,15 +1166,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1198,15 +1198,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1230,15 +1230,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1262,15 +1262,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1294,15 +1294,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1326,15 +1326,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1358,15 +1358,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1390,15 +1390,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1422,15 +1422,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1454,15 +1454,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1486,15 +1486,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1518,15 +1518,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1550,15 +1550,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1582,15 +1582,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1614,15 +1614,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1646,15 +1646,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1678,15 +1678,15 @@ window.TRACKER_DATA = {
               "done": false
             },
             {
-              "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-              "done": false
-            },
-            {
               "t": "Environment (completed May 2026)",
               "done": false
             },
             {
-              "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+              "t": "Constitution & Polity (completed Jul 2026)",
+              "done": false
+            },
+            {
+              "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
               "done": false
             },
             {
@@ -1715,15 +1715,15 @@ window.TRACKER_DATA = {
             "done": false
           },
           {
-            "t": "Ancient History (assumed ~Apr 2026 \u2014 confirm actual month)",
-            "done": false
-          },
-          {
             "t": "Environment (completed May 2026)",
             "done": false
           },
           {
-            "t": "Constitution & Polity (completed Jul 2026 \u2014 most recent)",
+            "t": "Constitution & Polity (completed Jul 2026)",
+            "done": false
+          },
+          {
+            "t": "Ancient History (completed Aug 2026 \u2014 most recent, lowest priority)",
             "done": false
           },
           {
