@@ -1,8 +1,8 @@
 window.TRACKER_DATA = {
-  "generated": "2026-09-16",
+  "generated": "2026-09-17",
   "brief": {
-    "date": "2026-09-16",
-    "weekday": "Wednesday",
+    "date": "2026-09-17",
+    "weekday": "Thursday",
     "total_hours": 16.0,
     "tasks": [
       {
@@ -12,12 +12,12 @@ window.TRACKER_DATA = {
         "hours": 4.5,
         "impossible": false,
         "milestone": "Modern History",
-        "due_in": 12,
+        "due_in": 11,
         "chunks": [
           "1857 Revolt & causes"
         ],
         "chunks_left": 6,
-        "note": ""
+        "note": "Carrying 4.5h of debt \u2014 today's target is raised to absorb it."
       },
       {
         "id": "psir-foundation",
@@ -26,12 +26,12 @@ window.TRACKER_DATA = {
         "hours": 3.5,
         "impossible": false,
         "milestone": "Political Theory \u2014 Core Concepts",
-        "due_in": 9,
+        "due_in": 8,
         "chunks": [
           "Meaning, approaches, and relevance of PT"
         ],
         "chunks_left": 5,
-        "note": ""
+        "note": "Carrying 3.5h of debt \u2014 today's target is raised to absorb it."
       },
       {
         "id": "yt-foundation",
@@ -40,12 +40,12 @@ window.TRACKER_DATA = {
         "hours": 6.0,
         "impossible": false,
         "milestone": "Channel branding & setup",
-        "due_in": 16,
+        "due_in": 15,
         "chunks": [
           "Pick channel name, handle, logo"
         ],
         "chunks_left": 3,
-        "note": ""
+        "note": "Carrying 6.0h of debt \u2014 today's target is raised to absorb it."
       },
       {
         "id": "recall-maintenance",
@@ -54,13 +54,14 @@ window.TRACKER_DATA = {
         "hours": 2.0,
         "impossible": false,
         "milestone": "Recall Week 1",
-        "due_in": 3,
+        "due_in": 2,
         "chunks": [
           "Geography (completed Mar 2026 \u2014 oldest, highest decay risk)",
-          "Medieval History (completed Apr 2026)"
+          "Medieval History (completed Apr 2026)",
+          "Environment (completed May 2026)"
         ],
         "chunks_left": 6,
-        "note": ""
+        "note": "Carrying 2.0h of debt \u2014 today's target is raised to absorb it."
       }
     ],
     "resting": [
@@ -68,7 +69,7 @@ window.TRACKER_DATA = {
     ],
     "logged_yesterday": false,
     "logged_today": false,
-    "nearest_deadline": 126,
+    "nearest_deadline": 125,
     "streak": 0
   },
   "owner": "Prabhat",
@@ -89,10 +90,10 @@ window.TRACKER_DATA = {
         "sat"
       ],
       "days_total": 126,
-      "days_elapsed": 0,
-      "days_left": 126,
-      "active_days_left": 108,
-      "time_frac": 0.0,
+      "days_elapsed": 1,
+      "days_left": 125,
+      "active_days_left": 107,
+      "time_frac": 0.0093,
       "work_frac": 0.0,
       "state": "on-track",
       "milestones": [
@@ -427,9 +428,9 @@ window.TRACKER_DATA = {
       },
       "daily_hours_target": 4.5,
       "hours_logged": 0,
-      "hours_expected": 0.0,
-      "hours_debt": 0.0,
-      "per_day_needed": null,
+      "hours_expected": 4.5,
+      "hours_debt": 4.5,
+      "per_day_needed": 4.54,
       "days_worked": 0,
       "streak": 0,
       "last_worked": null
@@ -450,10 +451,10 @@ window.TRACKER_DATA = {
         "sat"
       ],
       "days_total": 126,
-      "days_elapsed": 0,
-      "days_left": 126,
-      "active_days_left": 108,
-      "time_frac": 0.0,
+      "days_elapsed": 1,
+      "days_left": 125,
+      "active_days_left": 107,
+      "time_frac": 0.0093,
       "work_frac": 0.0,
       "state": "on-track",
       "milestones": [
@@ -824,9 +825,9 @@ window.TRACKER_DATA = {
       },
       "daily_hours_target": 3.5,
       "hours_logged": 0,
-      "hours_expected": 0.0,
-      "hours_debt": 0.0,
-      "per_day_needed": null,
+      "hours_expected": 3.5,
+      "hours_debt": 3.5,
+      "per_day_needed": 3.53,
       "days_worked": 0,
       "streak": 0,
       "last_worked": null
@@ -847,10 +848,10 @@ window.TRACKER_DATA = {
         "sat"
       ],
       "days_total": 126,
-      "days_elapsed": 0,
-      "days_left": 126,
-      "active_days_left": 108,
-      "time_frac": 0.0,
+      "days_elapsed": 1,
+      "days_left": 125,
+      "active_days_left": 107,
+      "time_frac": 0.0093,
       "work_frac": 0.0,
       "state": "on-track",
       "milestones": [
@@ -1057,9 +1058,9 @@ window.TRACKER_DATA = {
       },
       "daily_hours_target": 6.0,
       "hours_logged": 0,
-      "hours_expected": 0.0,
-      "hours_debt": 0.0,
-      "per_day_needed": null,
+      "hours_expected": 6.0,
+      "hours_debt": 6.0,
+      "per_day_needed": 6.06,
       "days_worked": 0,
       "streak": 0,
       "last_worked": null
@@ -1080,10 +1081,10 @@ window.TRACKER_DATA = {
         "sat"
       ],
       "days_total": 126,
-      "days_elapsed": 0,
-      "days_left": 126,
-      "active_days_left": 108,
-      "time_frac": 0.0,
+      "days_elapsed": 1,
+      "days_left": 125,
+      "active_days_left": 107,
+      "time_frac": 0.0093,
       "work_frac": 0.0,
       "state": "on-track",
       "milestones": [
@@ -1734,9 +1735,9 @@ window.TRACKER_DATA = {
       },
       "daily_hours_target": 2.0,
       "hours_logged": 0,
-      "hours_expected": 0.0,
-      "hours_debt": 0.0,
-      "per_day_needed": null,
+      "hours_expected": 2.0,
+      "hours_debt": 2.0,
+      "per_day_needed": 2.02,
       "days_worked": 0,
       "streak": 0,
       "last_worked": null
@@ -1758,8 +1759,8 @@ window.TRACKER_DATA = {
       ],
       "days_total": 116,
       "days_elapsed": 0,
-      "days_left": 242,
-      "active_days_left": 208,
+      "days_left": 241,
+      "active_days_left": 207,
       "time_frac": 0.0,
       "work_frac": 0.0,
       "state": "on-track",
@@ -1987,8 +1988,8 @@ window.TRACKER_DATA = {
       ],
       "days_total": 116,
       "days_elapsed": 0,
-      "days_left": 242,
-      "active_days_left": 208,
+      "days_left": 241,
+      "active_days_left": 207,
       "time_frac": 0.0,
       "work_frac": 0.0,
       "state": "on-track",
@@ -2140,8 +2141,8 @@ window.TRACKER_DATA = {
       ],
       "days_total": 116,
       "days_elapsed": 0,
-      "days_left": 242,
-      "active_days_left": 208,
+      "days_left": 241,
+      "active_days_left": 207,
       "time_frac": 0.0,
       "work_frac": 0.0,
       "state": "on-track",
@@ -2251,8 +2252,8 @@ window.TRACKER_DATA = {
         "sun"
       ],
       "days_total": 242,
-      "days_elapsed": 0,
-      "days_left": 242,
+      "days_elapsed": 1,
+      "days_left": 241,
       "active_days_left": 34,
       "time_frac": 0.0,
       "work_frac": 0.0,
